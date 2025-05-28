@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BidListService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">BidListService.java</span></div><h1>BidListService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import java.sql.Timestamp;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.nnk.springboot.dto.BidListDTO;
+import com.nnk.springboot.mapper.BidListMapper;
+import com.nnk.springboot.model.BidList;
+import com.nnk.springboot.repositories.BidListRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * Service class for managing BidList operations.
+ */
+@Service
+@RequiredArgsConstructor
+public class BidListService {
+
+    private final BidListRepository bidListRepository;
+    private final BidListMapper bidListMappper;
+
+    /**
+     * Get all BidList entries.
+     *
+     * @return list of BidList
+     */
+    public List&lt;BidList&gt; getAllBidsList() {
+<span class="fc" id="L32">        return bidListRepository.findAll();</span>
+    }
+
+    /**
+     * Get all BidList entries as DTOs.
+     *
+     * @return list of BidListDTO
+     */
+    public List&lt;BidListDTO&gt; getAllBidListDTO() {
+<span class="fc" id="L41">        return bidListRepository.findAll()</span>
+<span class="fc" id="L42">                .stream()</span>
+<span class="fc" id="L43">                .map(bidListMappper::tobidListDTO)</span>
+<span class="fc" id="L44">                .toList();</span>
+    }
+
+    /**
+     * Get a BidList by its ID.
+     *
+     * @param bidListId the bid ID
+     * @return the found BidList
+     * @throws EntityNotFoundException if not found
+     */
+    public BidList getBidListId(int bidListId) {
+<span class="fc" id="L55">        return bidListRepository.findById(bidListId)</span>
+<span class="fc" id="L56">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Bid with ID &quot; + bidListId + &quot; not found&quot;));</span>
+    }
+
+    /**
+     * Save a BidList to the database.
+     *
+     * @param bidList the bid to save
+     * @return the saved BidList
+     */
+    public BidList save(BidList bidList) {
+<span class="fc" id="L66">        return bidListRepository.save(bidList);</span>
+    }
+
+    /**
+     * Delete a BidList from the database.
+     *
+     * @param bidList the bid to delete
+     */
+    public void delete(BidList bidList) {
+<span class="fc" id="L75">        bidListRepository.delete(bidList);</span>
+<span class="fc" id="L76">    }</span>
+
+    /**
+     * Update an existing BidList using a DTO and a source object.
+     *
+     * @param updateBid     the DTO with the bid ID
+     * @param updateBidList the object with new values
+     */
+    public void update(BidListDTO updateBid, BidList updateBidList) {
+<span class="fc" id="L85">        BidList bidList = getBidListId(updateBid.getBidListId());</span>
+<span class="fc" id="L86">        bidListMappper.updateBidListFromDTO(updateBid, bidList);</span>
+
+<span class="fc" id="L88">        bidList.setAskQuantity(updateBidList.getAskQuantity());</span>
+<span class="fc" id="L89">        bidList.setBid(updateBidList.getBid());</span>
+<span class="fc" id="L90">        bidList.setAsk(updateBidList.getAsk());</span>
+<span class="fc" id="L91">        bidList.setBenchmark(updateBidList.getBenchmark());</span>
+<span class="fc" id="L92">        bidList.setBidListDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L93">        bidList.setCommentary(updateBidList.getCommentary());</span>
+<span class="fc" id="L94">        bidList.setSecurity(updateBidList.getSecurity());</span>
+<span class="fc" id="L95">        bidList.setStatus(updateBidList.getStatus());</span>
+<span class="fc" id="L96">        bidList.setTrader(updateBidList.getTrader());</span>
+<span class="fc" id="L97">        bidList.setBook(updateBidList.getBook());</span>
+<span class="fc" id="L98">        bidList.setCreationName(updateBidList.getCreationName());</span>
+<span class="fc" id="L99">        bidList.setRevisionName(updateBidList.getRevisionName());</span>
+<span class="fc" id="L100">        bidList.setRevisionDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L101">        bidList.setDealName(updateBidList.getDealName());</span>
+<span class="fc" id="L102">        bidList.setDealType(updateBidList.getDealType());</span>
+<span class="fc" id="L103">        bidList.setSourceListId(updateBidList.getSourceListId());</span>
+<span class="fc" id="L104">        bidList.setSide(updateBidList.getSide());</span>
+
+<span class="fc" id="L106">        save(bidList);</span>
+<span class="fc" id="L107">    }</span>
+
+    /**
+     * Convert a list of BidList to DTOs.
+     *
+     * @param bidLists list of BidList
+     * @return list of BidListDTO
+     */
+    public List&lt;BidListDTO&gt; getBidListDTO(List&lt;BidList&gt; bidLists) {
+<span class="nc" id="L116">        return bidLists.stream()</span>
+<span class="nc" id="L117">                .map(bidListMappper::tobidListDTO)</span>
+<span class="nc" id="L118">                .toList();</span>
+    }
+
+    /**
+     * Add a new BidList from a DTO.
+     *
+     * @param bidListDTO the DTO to convert and save
+     */
+    public void add(BidListDTO bidListDTO) {
+<span class="fc" id="L127">        BidList bidList = bidListMappper.tobidList(bidListDTO);</span>
+<span class="fc" id="L128">        bidList.setCreationDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L129">        save(bidList);</span>
+<span class="fc" id="L130">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

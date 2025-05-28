@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RatingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">RatingService.java</span></div><h1>RatingService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import java.sql.Timestamp;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.nnk.springboot.dto.RatingDTO;
+import com.nnk.springboot.mapper.RatingMapper;
+import com.nnk.springboot.model.Rating;
+import com.nnk.springboot.repositories.RatingRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * Service class for managing Rating operations.
+ */
+@Service
+@RequiredArgsConstructor
+public class RatingService {
+
+    private final RatingRepository ratingRepository;
+    private final RatingMapper ratingMapper;
+
+    /**
+     * Get all Rating entries.
+     *
+     * @return list of Rating
+     */
+    public List&lt;Rating&gt; getAllRating() {
+<span class="fc" id="L32">        return ratingRepository.findAll();</span>
+    }
+
+    /**
+     * Get all Rating entries as DTOs.
+     *
+     * @return list of RatingDTO
+     */
+    public List&lt;RatingDTO&gt; getAllRatingListDTO() {
+<span class="fc" id="L41">        return ratingRepository.findAll()</span>
+<span class="fc" id="L42">                .stream()</span>
+<span class="fc" id="L43">                .map(ratingMapper::toRatingDTO)</span>
+<span class="fc" id="L44">                .toList();</span>
+    }
+
+    /**
+     * Get a Rating by its ID.
+     *
+     * @param id the rating ID
+     * @return the found Rating
+     * @throws EntityNotFoundException if not found
+     */
+    public Rating getRatingId(int id) {
+<span class="fc" id="L55">        return ratingRepository.findById(id)</span>
+<span class="fc" id="L56">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Rating with ID &quot; + id + &quot; not found&quot;));</span>
+    }
+
+    /**
+     * Save a Rating to the database.
+     *
+     * @param rating the rating to save
+     * @return the saved Rating
+     */
+    public Rating save(Rating rating) {
+<span class="fc" id="L66">        return ratingRepository.save(rating);</span>
+    }
+
+    /**
+     * Delete a Rating from the database.
+     *
+     * @param rating the rating to delete
+     */
+    public void delete(Rating rating) {
+<span class="fc" id="L75">        ratingRepository.delete(rating);</span>
+<span class="fc" id="L76">    }</span>
+
+    /**
+     * Update an existing Rating using a DTO.
+     *
+     * @param updateRating the DTO with updated values
+     */
+    public void update(RatingDTO updateRating) {
+<span class="fc" id="L84">        Rating rating = getRatingId(updateRating.getId());</span>
+<span class="fc" id="L85">        ratingMapper.updateRatingListFromDTO(updateRating, rating);</span>
+<span class="fc" id="L86">        save(rating);</span>
+<span class="fc" id="L87">    }</span>
+
+    /**
+     * Convert a list of Rating to DTOs.
+     *
+     * @param ratings list of Rating
+     * @return list of RatingDTO
+     */
+    public List&lt;RatingDTO&gt; getListRatingDTO(List&lt;Rating&gt; ratings) {
+<span class="fc" id="L96">        return ratings.stream()</span>
+<span class="fc" id="L97">                .map(ratingMapper::toRatingDTO)</span>
+<span class="fc" id="L98">                .toList();</span>
+    }
+
+    /**
+     * Add a new Rating from a DTO.
+     *
+     * @param ratingDTO the DTO to convert and save
+     */
+    public void add(RatingDTO ratingDTO) {
+<span class="fc" id="L107">        Rating rating = ratingMapper.toRating(ratingDTO);</span>
+
+<span class="fc" id="L109">        rating.setCreationDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L110">        save(rating);</span>
+<span class="fc" id="L111">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

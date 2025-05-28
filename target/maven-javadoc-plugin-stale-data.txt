@@ -1,0 +1,130 @@
+@options
+@packages
+-classpath
+'C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.4.6/spring-boot-starter-actuator-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.6/spring-boot-starter-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.6/spring-boot-starter-logging-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.4.6/spring-boot-actuator-autoconfigure-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-actuator/3.4.6/spring-boot-actuator-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.4/jackson-databind-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.4/jackson-annotations-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.4/jackson-core-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.4/jackson-datatype-jsr310-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/io/micrometer/micrometer-observation/1.14.7/micrometer-observation-1.14.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/io/micrometer/micrometer-commons/1.14.7/micrometer-commons-1.14.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/io/micrometer/micrometer-jakarta9/1.14.7/micrometer-jakarta9-1.14.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/io/micrometer/micrometer-core/1.14.7/micrometer-core-1.14.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-core/6.2.7/spring-core-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-jcl/6.2.7/spring-jcl-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.6/spring-boot-starter-web-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.6/spring-boot-starter-json-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.4/jackson-datatype-jdk8-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.4/jackson-module-parameter-names-2.18.4.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.6/spring-boot-starter-tomcat-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.41/tomcat-embed-core-10.1.41.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.41/tomcat-embed-websocket-10.1.41.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-web/6.2.7/spring-web-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-beans/6.2.7/spring-beans-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-webmvc/6.2.7/spring-webmvc-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-context/6.2.7/spring-context-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-expression/6.2.7/spring-expression-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.4.6/spring-boot-starter-thymeleaf-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.3.RELEASE/thymeleaf-spring6-3.1.3.RELEASE.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/thymeleaf/thymeleaf/3.1.3.RELEASE/thymeleaf-3.1.3.RELEASE.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.6/spring-boot-starter-security-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-aop/6.2.7/spring-aop-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/security/spring-security-config/6.4.6/spring-security-config-6.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/security/spring-security-web/6.4.6/spring-security-web-6.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot/3.4.6/spring-boot-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.6/spring-boot-autoconfigure-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/mysql/mysql-connector-j/9.1.0/mysql-connector-j-9.1.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.6/spring-boot-starter-validation-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.41/tomcat-embed-el-10.1.41.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/thymeleaf/extras/thymeleaf-extras-springsecurity6/3.1.3.RELEASE/thymeleaf-extras-springsecurity6-3.1.3.RELEASE.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/security/spring-security-core/6.4.6/spring-security-core-6.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/security/spring-security-crypto/6.4.6/spring-security-crypto-6.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.6/spring-boot-starter-data-jpa-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.6/spring-boot-starter-jdbc-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-jdbc/6.2.7/spring-jdbc-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/hibernate/orm/hibernate-core/6.6.15.Final/hibernate-core-6.6.15.Final.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/data/spring-data-jpa/3.4.6/spring-data-jpa-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/data/spring-data-commons/3.4.6/spring-data-commons-3.4.6.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-orm/6.2.7/spring-orm-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-tx/6.2.7/spring-tx-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/springframework/spring-aspects/6.2.7/spring-aspects-6.2.7.jar;C:/Users/AGOUROU GUSTAVE/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar'
+-encoding
+'UTF-8'
+-private
+--release
+17
+-sourcepath
+'C:/Users/AGOUROU GUSTAVE/Downloads/Open Classroom/P7/OC_PROJECT_7-master/Poseiden-skeleton/src/main/java;C:/Users/AGOUROU GUSTAVE/Downloads/Open Classroom/P7/OC_PROJECT_7-master/Poseiden-skeleton/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/AGOUROU GUSTAVE/Downloads/Open Classroom/P7/OC_PROJECT_7-master/Poseiden-skeleton/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'spring-boot-skeleton 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'spring-boot-skeleton 0.0.1-SNAPSHOT API'
+com.nnk.springboot
+com.nnk.springboot.configuration
+com.nnk.springboot.controller
+com.nnk.springboot.dto
+com.nnk.springboot.exception
+com.nnk.springboot.mapper
+com.nnk.springboot.model
+com.nnk.springboot.repositories
+com.nnk.springboot.service
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.4.6\spring-boot-starter-actuator-3.4.6.jar = 1747920205519
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.6\spring-boot-starter-3.4.6.jar = 1747920206149
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.6\spring-boot-starter-logging-3.4.6.jar = 1747920206148
+C:\Users\AGOUROU GUSTAVE\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar = 1742545076629
+C:\Users\AGOUROU GUSTAVE\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar = 1742545076937
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar = 1741634097284
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar = 1741634097496
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar = 1742545076392
+C:\Users\AGOUROU GUSTAVE\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1741634097465
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar = 1741634097797
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.4.6\spring-boot-actuator-autoconfigure-3.4.6.jar = 1747920209950
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-actuator\3.4.6\spring-boot-actuator-3.4.6.jar = 1747920206160
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.4\jackson-databind-2.18.4.jar = 1747920210669
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.4\jackson-annotations-2.18.4.jar = 1747920206636
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.4\jackson-core-2.18.4.jar = 1747920210173
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.4\jackson-datatype-jsr310-2.18.4.jar = 1747920208195
+C:\Users\AGOUROU GUSTAVE\.m2\repository\io\micrometer\micrometer-observation\1.14.7\micrometer-observation-1.14.7.jar = 1747920208143
+C:\Users\AGOUROU GUSTAVE\.m2\repository\io\micrometer\micrometer-commons\1.14.7\micrometer-commons-1.14.7.jar = 1747920211179
+C:\Users\AGOUROU GUSTAVE\.m2\repository\io\micrometer\micrometer-jakarta9\1.14.7\micrometer-jakarta9-1.14.7.jar = 1747920211102
+C:\Users\AGOUROU GUSTAVE\.m2\repository\io\micrometer\micrometer-core\1.14.7\micrometer-core-1.14.7.jar = 1747920211766
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-core\6.2.7\spring-core-6.2.7.jar = 1747920212615
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-jcl\6.2.7\spring-jcl-6.2.7.jar = 1747920213012
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.4.6\spring-boot-starter-web-3.4.6.jar = 1747920213757
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.4.6\spring-boot-starter-json-3.4.6.jar = 1747920214028
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.4\jackson-datatype-jdk8-2.18.4.jar = 1747920215614
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.4\jackson-module-parameter-names-2.18.4.jar = 1747920214992
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.4.6\spring-boot-starter-tomcat-3.4.6.jar = 1747920214818
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.41\tomcat-embed-core-10.1.41.jar = 1747920216422
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.41\tomcat-embed-websocket-10.1.41.jar = 1747920215292
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-web\6.2.7\spring-web-6.2.7.jar = 1747920216228
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-beans\6.2.7\spring-beans-6.2.7.jar = 1747920214668
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-webmvc\6.2.7\spring-webmvc-6.2.7.jar = 1747920216046
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-context\6.2.7\spring-context-6.2.7.jar = 1747920213775
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-expression\6.2.7\spring-expression-6.2.7.jar = 1747920216265
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.4.6\spring-boot-starter-thymeleaf-3.4.6.jar = 1747920216512
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.3.RELEASE\thymeleaf-spring6-3.1.3.RELEASE.jar = 1741634097792
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\thymeleaf\thymeleaf\3.1.3.RELEASE\thymeleaf-3.1.3.RELEASE.jar = 1741634097979
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar = 1741634098128
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar = 1741634097960
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.4.6\spring-boot-starter-security-3.4.6.jar = 1747920216427
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-aop\6.2.7\spring-aop-6.2.7.jar = 1747920216761
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\security\spring-security-config\6.4.6\spring-security-config-6.4.6.jar = 1747920217461
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\security\spring-security-web\6.4.6\spring-security-web-6.4.6.jar = 1747920217311
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot\3.4.6\spring-boot-3.4.6.jar = 1747920217706
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.6\spring-boot-autoconfigure-3.4.6.jar = 1747920218006
+C:\Users\AGOUROU GUSTAVE\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar = 1741682984083
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\mysql\mysql-connector-j\9.1.0\mysql-connector-j-9.1.0.jar = 1744894304830
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar = 1744971828399
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\mapstruct\mapstruct\1.6.3\mapstruct-1.6.3.jar = 1746011687457
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\mapstruct\mapstruct-processor\1.6.3\mapstruct-processor-1.6.3.jar = 1746011713183
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\projectlombok\lombok-mapstruct-binding\0.2.0\lombok-mapstruct-binding-0.2.0.jar = 1747505608976
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.4.6\spring-boot-starter-validation-3.4.6.jar = 1747920217675
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.41\tomcat-embed-el-10.1.41.jar = 1747920217737
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.2.Final\hibernate-validator-8.0.2.Final.jar = 1741683087654
+C:\Users\AGOUROU GUSTAVE\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar = 1741683087228
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar = 1741685723436
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar = 1741682984310
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.3.RELEASE\thymeleaf-extras-springsecurity6-3.1.3.RELEASE.jar = 1745573422943
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar = 1742545078376
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\security\spring-security-core\6.4.6\spring-security-core-6.4.6.jar = 1747920216909
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\security\spring-security-crypto\6.4.6\spring-security-crypto-6.4.6.jar = 1747920217092
+C:\Users\AGOUROU GUSTAVE\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar = 1741634102573
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.4.6\spring-boot-starter-data-jpa-3.4.6.jar = 1747920211698
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.4.6\spring-boot-starter-jdbc-3.4.6.jar = 1747920212407
+C:\Users\AGOUROU GUSTAVE\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar = 1741682983899
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-jdbc\6.2.7\spring-jdbc-6.2.7.jar = 1747920212977
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\hibernate\orm\hibernate-core\6.6.15.Final\hibernate-core-6.6.15.Final.jar = 1747920218090
+C:\Users\AGOUROU GUSTAVE\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar = 1741682984132
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar = 1741682984923
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\data\spring-data-jpa\3.4.6\spring-data-jpa-3.4.6.jar = 1747920213417
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\data\spring-data-commons\3.4.6\spring-data-commons-3.4.6.jar = 1747920213533
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-orm\6.2.7\spring-orm-6.2.7.jar = 1747920213278
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-tx\6.2.7\spring-tx-6.2.7.jar = 1747920213584
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\springframework\spring-aspects\6.2.7\spring-aspects-6.2.7.jar = 1747920216918
+C:\Users\AGOUROU GUSTAVE\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar = 1745573419738
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\src\main\java = 1747503755366
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\generated-sources\annotations = 1748471793958
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\allclasses-index.html = 1748473589787
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\allpackages-index.html = 1748473589802
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\element-list = 1748473587105
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\help-doc.html = 1748473590334
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\index-all.html = 1748473590319
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\index.html = 1748473589474
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\jquery-ui.overrides.css = 1748473590413
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\member-search-index.js = 1748473589912
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\module-search-index.js = 1748473589802
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\overview-summary.html = 1748473590319
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\overview-tree.html = 1748473589458
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\package-search-index.js = 1748473589802
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\script.js = 1748473590350
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\search.js = 1748473590350
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\serialized-form.html = 1748473587608
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\stylesheet.css = 1748473590334
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\tag-search-index.js = 1748473590053
+C:\Users\AGOUROU GUSTAVE\Downloads\Open Classroom\P7\OC_PROJECT_7-master\Poseiden-skeleton\target\site\apidocs\type-search-index.js = 1748473589802

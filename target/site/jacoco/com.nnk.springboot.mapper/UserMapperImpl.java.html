@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.mapper</a> &gt; <span class="el_source">UserMapperImpl.java</span></div><h1>UserMapperImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.mapper;
+
+import com.nnk.springboot.dto.UserDTO;
+import com.nnk.springboot.model.User;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-05-29T00:36:36+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+)
+@Component
+<span class="fc" id="L14">public class UserMapperImpl implements UserMapper {</span>
+
+    @Override
+    public UserDTO toUserDTO(User user) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( user == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
+        }
+
+<span class="fc" id="L22">        UserDTO userDTO = new UserDTO();</span>
+
+<span class="fc" id="L24">        userDTO.setId( user.getId() );</span>
+<span class="fc" id="L25">        userDTO.setUsername( user.getUsername() );</span>
+<span class="fc" id="L26">        userDTO.setFullname( user.getFullname() );</span>
+<span class="fc" id="L27">        userDTO.setPassword( user.getPassword() );</span>
+<span class="fc" id="L28">        userDTO.setRole( user.getRole() );</span>
+
+<span class="fc" id="L30">        return userDTO;</span>
+    }
+
+    @Override
+    public void updateUserListFromDTO(UserDTO dto, User entity) {
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if ( dto == null ) {</span>
+<span class="nc" id="L36">            return;</span>
+        }
+
+<span class="fc" id="L39">        entity.setId( dto.getId() );</span>
+<span class="fc" id="L40">        entity.setUsername( dto.getUsername() );</span>
+<span class="fc" id="L41">        entity.setFullname( dto.getFullname() );</span>
+<span class="fc" id="L42">        entity.setRole( dto.getRole() );</span>
+<span class="fc" id="L43">    }</span>
+
+    @Override
+    public User toUser(UserDTO userDTO) {
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if ( userDTO == null ) {</span>
+<span class="nc" id="L48">            return null;</span>
+        }
+
+<span class="fc" id="L51">        User user = new User();</span>
+
+<span class="fc" id="L53">        user.setId( userDTO.getId() );</span>
+<span class="fc" id="L54">        user.setUsername( userDTO.getUsername() );</span>
+<span class="fc" id="L55">        user.setPassword( userDTO.getPassword() );</span>
+<span class="fc" id="L56">        user.setFullname( userDTO.getFullname() );</span>
+<span class="fc" id="L57">        user.setRole( userDTO.getRole() );</span>
+
+<span class="fc" id="L59">        return user;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

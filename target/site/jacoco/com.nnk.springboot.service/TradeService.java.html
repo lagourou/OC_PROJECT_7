@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TradeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">TradeService.java</span></div><h1>TradeService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import java.sql.Timestamp;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.nnk.springboot.dto.TradeDTO;
+import com.nnk.springboot.mapper.TradeMapper;
+import com.nnk.springboot.model.Trade;
+import com.nnk.springboot.repositories.TradeRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * Service class for managing Trade operations.
+ */
+@Service
+@RequiredArgsConstructor
+public class TradeService {
+
+    private final TradeRepository tradeRepository;
+    private final TradeMapper tradeMapper;
+
+    /**
+     * Get all Trade entries.
+     *
+     * @return list of Trade
+     */
+    public List&lt;Trade&gt; getAllTrade() {
+<span class="fc" id="L32">        return tradeRepository.findAll();</span>
+    }
+
+    /**
+     * Get all Trade entries as DTOs.
+     *
+     * @return list of TradeDTO
+     */
+    public List&lt;TradeDTO&gt; getAllTradeListDTO() {
+<span class="fc" id="L41">        return tradeRepository.findAll()</span>
+<span class="fc" id="L42">                .stream()</span>
+<span class="fc" id="L43">                .map(tradeMapper::toTradeDTO)</span>
+<span class="fc" id="L44">                .toList();</span>
+    }
+
+    /**
+     * Get a Trade by its ID.
+     *
+     * @param tradeId the trade ID
+     * @return the found Trade
+     * @throws EntityNotFoundException if not found
+     */
+    public Trade getTradeId(int tradeId) {
+<span class="fc" id="L55">        return tradeRepository.findById(tradeId)</span>
+<span class="fc" id="L56">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Trade with ID &quot; + tradeId + &quot; not found&quot;));</span>
+    }
+
+    /**
+     * Save a Trade to the database.
+     *
+     * @param trade the trade to save
+     * @return the saved Trade
+     */
+    public Trade save(Trade trade) {
+<span class="fc" id="L66">        return tradeRepository.save(trade);</span>
+    }
+
+    /**
+     * Delete a Trade from the database.
+     *
+     * @param trade the trade to delete
+     */
+    public void delete(Trade trade) {
+<span class="fc" id="L75">        tradeRepository.delete(trade);</span>
+<span class="fc" id="L76">    }</span>
+
+    /**
+     * Update an existing Trade using DTO and additional data.
+     *
+     * @param updateTrade     the DTO with updated values
+     * @param updateTradeList the Trade with extra values to update
+     */
+    public void update(TradeDTO updateTrade, Trade updateTradeList) {
+
+<span class="fc" id="L86">        Trade trade = getTradeId(updateTrade.getTradeId());</span>
+<span class="fc" id="L87">        tradeMapper.updateTradeListFromDTO(updateTrade, trade);</span>
+
+<span class="fc" id="L89">        trade.setSellQuantity(updateTradeList.getSellQuantity());</span>
+<span class="fc" id="L90">        trade.setBuyPrice(updateTradeList.getBuyPrice());</span>
+<span class="fc" id="L91">        trade.setTradeDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L92">        trade.setSecurity(updateTradeList.getSecurity());</span>
+<span class="fc" id="L93">        trade.setStatus(updateTradeList.getStatus());</span>
+<span class="fc" id="L94">        trade.setTrader(updateTradeList.getTrader());</span>
+<span class="fc" id="L95">        trade.setBenchmark(updateTradeList.getBenchmark());</span>
+<span class="fc" id="L96">        trade.setBook(updateTradeList.getBook());</span>
+<span class="fc" id="L97">        trade.setCreationName(updateTradeList.getCreationName());</span>
+<span class="fc" id="L98">        trade.setRevisionName(updateTradeList.getRevisionName());</span>
+<span class="fc" id="L99">        trade.setRevisionDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L100">        trade.setDealName(updateTradeList.getDealName());</span>
+<span class="fc" id="L101">        trade.setDealType(updateTradeList.getDealType());</span>
+<span class="fc" id="L102">        trade.setSourceListId(updateTradeList.getSourceListId());</span>
+<span class="fc" id="L103">        trade.setSide(updateTradeList.getSide());</span>
+
+<span class="fc" id="L105">        save(trade);</span>
+<span class="fc" id="L106">    }</span>
+
+    /**
+     * Convert a list of Trade to DTOs.
+     *
+     * @param trades list of Trade
+     * @return list of TradeDTO
+     */
+    public List&lt;TradeDTO&gt; getListTradeDTO(List&lt;Trade&gt; trades) {
+<span class="fc" id="L115">        return trades.stream()</span>
+<span class="fc" id="L116">                .map(tradeMapper::toTradeDTO)</span>
+<span class="fc" id="L117">                .toList();</span>
+    }
+
+    /**
+     * Add a new Trade using a DTO.
+     *
+     * @param tradeDTO the DTO to convert and save
+     */
+    public void add(TradeDTO tradeDTO) {
+<span class="fc" id="L126">        Trade trade = tradeMapper.toTrade(tradeDTO);</span>
+
+<span class="fc" id="L128">        trade.setCreationDate(new Timestamp(System.currentTimeMillis()));</span>
+<span class="fc" id="L129">        save(trade);</span>
+<span class="fc" id="L130">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

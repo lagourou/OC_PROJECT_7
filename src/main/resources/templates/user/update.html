@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<style>
+    .role-update-form {
+        text-align: center;
+        position: absolute;
+        right: 600px;
+    }
+
+    .role-update-form h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .role-update-form div {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .role-update-form .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+        </style>
+
+		<meta charset="utf-8" />
+		<title>Home</title>
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="row">
+				<h2>Update User</h2>
+			</div>
+
+			<div class="row">
+				<form action="#" th:action="@{/user/update/{id}(id=${userDTO.id})}"
+					th:object="${userDTO}" method="post" class="form-horizontal"
+					style="width: 100%">
+					<div class="form-group">
+						<label for="fullname" class="col-sm-2 control-label">Full Name</label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{fullname}" id="fullname"
+								placeholder="Full Name" class="col-4">
+							<p class="text-danger" th:if="${#fields.hasErrors('fullname')}"
+								th:errors="*{fullname}"></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="username" class="col-sm-2 control-label">User Name</label>
+						<div class="col-sm-10">
+							<input type="text" th:field="*{username}" id="username"
+								placeholder="User Name" class="col-4">
+							<p class="text-danger" th:if="${#fields.hasErrors('username')}"
+								th:errors="*{username}"></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-sm-2 control-label">Password</label>
+						<div class="col-sm-10">
+							<input type="password" th:field="*{password}" id="password"
+								placeholder="Password" class="col-4"
+								th:attr="name=${userDTO.id == null ? 'password' : null}">
+							<p class="text-danger" th:if="${#fields.hasErrors('password')}"
+								th:errors="*{password}"></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="hidden" th:field="*{id}">
+							<a class="btn btn-danger btn-sm" href="/user/list">Cancel</a>
+							<input class="btn btn-primary btn-sm" type="submit" value="Update User">
+						</div>
+					</div>
+
+				</form>
+
+				<div class="role-update-form">
+					<h3>Change User Role</h3>
+					<form action="#" th:action="@{/user/updateRole/{id}(id=${userDTO.id})}"
+						method="post">
+						<div>
+							<label class="checkbox-inline">
+								<input type="radio" name="role" value="ADMIN"
+									th:checked="${userDTO.role == 'ADMIN'}"> Admin
+							</label>
+							<label class="checkbox-inline">
+								<input type="radio" name="role" value="USER"
+									th:checked="${userDTO.role == 'USER'}"> User
+							</label>
+						</div>
+						<div class="col-sm-12">
+							<input class="btn btn-primary btn-sm" type="submit" value="Update Role">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

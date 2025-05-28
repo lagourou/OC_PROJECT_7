@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.service</a> &gt; <span class="el_source">UserService.java</span></div><h1>UserService.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.service;
+
+import java.util.List;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.nnk.springboot.dto.UserDTO;
+import com.nnk.springboot.mapper.UserMapper;
+import com.nnk.springboot.model.User;
+import com.nnk.springboot.repositories.UserRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * Service class for managing User operations.
+ */
+@Service
+@RequiredArgsConstructor
+public class UserService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final UserMapper userMapper;
+
+    /**
+     * Get all users.
+     *
+     * @return list of User
+     */
+    public List&lt;User&gt; getAllUsers() {
+<span class="fc" id="L33">        return userRepository.findAll();</span>
+    }
+
+    /**
+     * Get all users as DTOs.
+     *
+     * @return list of UserDTO
+     */
+    public List&lt;UserDTO&gt; getAllUsersListDTO() {
+<span class="fc" id="L42">        return userRepository.findAll()</span>
+<span class="fc" id="L43">                .stream()</span>
+<span class="fc" id="L44">                .map(userMapper::toUserDTO)</span>
+<span class="fc" id="L45">                .toList();</span>
+    }
+
+    /**
+     * Find a user by ID.
+     *
+     * @param id user ID
+     * @return found User
+     * @throws EntityNotFoundException if user not found
+     */
+    public User getUserById(int id) {
+<span class="fc" id="L56">        return userRepository.findById(id)</span>
+<span class="fc" id="L57">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;User with ID &quot; + id + &quot; not found&quot;));</span>
+    }
+
+    /**
+     * Save or update a user.
+     *
+     * @param user user to save
+     * @return saved User
+     */
+    public User save(User user) {
+<span class="pc bpc" id="L67" title="2 of 4 branches missed.">        if (user.getRole() == null || user.getRole().isEmpty()) {</span>
+<span class="nc" id="L68">            user.setRole(&quot;USER&quot;);</span>
+        }
+
+<span class="pc bpc" id="L71" title="2 of 4 branches missed.">        if (user.getId() != null &amp;&amp; userRepository.existsById(user.getId())) {</span>
+<span class="nc" id="L72">            User existingUser = userRepository.findById(user.getId()).orElseThrow();</span>
+
+<span class="nc bnc" id="L74" title="All 4 branches missed.">            if (user.getPassword() == null || user.getPassword().isEmpty()) {</span>
+<span class="nc" id="L75">                user.setPassword(existingUser.getPassword());</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">            } else if (!passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {</span>
+<span class="nc" id="L77">                user.setPassword(passwordEncoder.encode(user.getPassword()));</span>
+            }
+<span class="nc" id="L79">        } else {</span>
+<span class="fc" id="L80">            user.setPassword(passwordEncoder.encode(user.getPassword()));</span>
+        }
+
+<span class="fc" id="L83">        return userRepository.save(user);</span>
+    }
+
+    /**
+     * Delete a user.
+     *
+     * @param user user to delete
+     */
+    public void delete(User user) {
+<span class="fc" id="L92">        userRepository.delete(user);</span>
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * Update an existing user from DTO.
+     *
+     * @param updateUserDTO DTO with updated values
+     * @param existingUser  user to update
+     */
+    public void updateUser(UserDTO updateUserDTO, User existingUser) {
+<span class="fc" id="L102">        userMapper.updateUserListFromDTO(updateUserDTO, existingUser);</span>
+
+<span class="pc bpc" id="L104" title="2 of 4 branches missed.">        if (updateUserDTO.getPassword() == null || updateUserDTO.getPassword().isEmpty()) {</span>
+<span class="nc" id="L105">            existingUser.setPassword(existingUser.getPassword());</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">        } else if (!passwordEncoder.matches(updateUserDTO.getPassword(), existingUser.getPassword())) {</span>
+<span class="fc" id="L107">            existingUser.setPassword(passwordEncoder.encode(updateUserDTO.getPassword()));</span>
+        }
+
+<span class="fc" id="L110">        save(existingUser);</span>
+<span class="fc" id="L111">    }</span>
+
+    /**
+     * Convert a list of Users to DTOs.
+     *
+     * @param users list of User
+     * @return list of UserDTO
+     */
+    public List&lt;UserDTO&gt; getListUserDTO(List&lt;User&gt; users) {
+<span class="nc" id="L120">        return users.stream()</span>
+<span class="nc" id="L121">                .map(userMapper::toUserDTO)</span>
+<span class="nc" id="L122">                .toList();</span>
+    }
+
+    /**
+     * Add a new user from a DTO.
+     *
+     * @param userDTO the user DTO to add
+     */
+    public void add(UserDTO userDTO) {
+<span class="fc" id="L131">        User user = userMapper.toUser(userDTO);</span>
+<span class="fc" id="L132">        user.setPassword(passwordEncoder.encode(user.getPassword()));</span>
+<span class="fc" id="L133">        save(user);</span>
+<span class="fc" id="L134">    }</span>
+
+    /**
+     * Update the role of a user.
+     *
+     * @param userId  user ID
+     * @param newRole new role to assign
+     */
+    public void updateUserRole(int userId, String newRole) {
+
+<span class="fc" id="L144">        User user = userRepository.findById(userId)</span>
+<span class="pc" id="L145">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;User with ID &quot; + userId + &quot; not found&quot;));</span>
+
+<span class="fc" id="L147">        System.out.println(&quot;Mot de passe avant mise à jour du rôle: &quot; + user.getPassword());</span>
+
+<span class="pc bpc" id="L149" title="1 of 4 branches missed.">        if (!newRole.equals(&quot;USER&quot;) &amp;&amp; !newRole.equals(&quot;ADMIN&quot;)) {</span>
+<span class="fc" id="L150">            throw new IllegalArgumentException(&quot;Invalid role: must be 'USER' or 'ADMIN'&quot;);</span>
+        }
+
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">        if (!user.getRole().equals(newRole)) {</span>
+<span class="fc" id="L154">            user.setRole(newRole);</span>
+<span class="fc" id="L155">            userRepository.save(user);</span>
+        }
+<span class="fc" id="L157">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

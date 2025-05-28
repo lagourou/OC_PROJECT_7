@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Login - Poseidon Capital Solutions</title>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../css/login.css" />
+    </head>
+    <body class="login-body">
+        <div class="container-login">
+            <h4 class="login-h4">Login with Username and Password</h4>
+
+            <form th:action="@{/app/login}" method="post">
+                <div class="login-form-group">
+                    <label for="username" class="login-label">User:</label>
+                    <input type="text" id="username" name="username"
+                        class="login-form-control" required autofocus>
+                </div>
+
+                <div class="login-form-group">
+                    <label for="password" class="login-label">Password:</label>
+                    <input type="password" id="password" name="password"
+                        class="login-form-control" required>
+                </div>
+                <input type="hidden" name="redirect"
+                    th:value="${param.redirect}" />
+                <button type="submit" class="login-btn-primary">Login</button>
+                <div class="login-links">
+                    <a th:href="@{/user/add}" class="login-btn-secondary">Create
+                        an account</a>
+                    <span>|</span>
+                    <a href="/" class="login-btn-secondary">Home</a>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>

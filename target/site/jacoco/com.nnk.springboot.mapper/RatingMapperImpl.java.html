@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RatingMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.mapper</a> &gt; <span class="el_source">RatingMapperImpl.java</span></div><h1>RatingMapperImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.mapper;
+
+import com.nnk.springboot.dto.RatingDTO;
+import com.nnk.springboot.model.Rating;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(value = &quot;org.mapstruct.ap.MappingProcessor&quot;, date = &quot;2025-05-29T00:36:34+0200&quot;, comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;)
+@Component
+<span class="fc" id="L10">public class RatingMapperImpl implements RatingMapper {</span>
+
+    @Override
+    public RatingDTO toRatingDTO(Rating rating) {
+<span class="pc bpc" id="L14" title="1 of 2 branches missed.">        if (rating == null) {</span>
+<span class="nc" id="L15">            return null;</span>
+        }
+
+<span class="fc" id="L18">        RatingDTO ratingDTO = new RatingDTO();</span>
+
+<span class="fc" id="L20">        ratingDTO.setId(rating.getId());</span>
+<span class="fc" id="L21">        ratingDTO.setMoodysRating(rating.getMoodysRating());</span>
+<span class="fc" id="L22">        ratingDTO.setSandPRating(rating.getSandPRating());</span>
+<span class="fc" id="L23">        ratingDTO.setFitchRating(rating.getFitchRating());</span>
+<span class="fc" id="L24">        ratingDTO.setOrderNumber(rating.getOrderNumber());</span>
+
+<span class="fc" id="L26">        return ratingDTO;</span>
+    }
+
+    @Override
+    public Rating toRating(RatingDTO ratingDTO) {
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (ratingDTO == null) {</span>
+<span class="nc" id="L32">            return null;</span>
+        }
+
+<span class="fc" id="L35">        Rating rating = new Rating();</span>
+
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (ratingDTO.getId() != null) {</span>
+<span class="fc" id="L38">            rating.setId(ratingDTO.getId());</span>
+        }
+<span class="fc" id="L40">        rating.setMoodysRating(ratingDTO.getMoodysRating());</span>
+<span class="fc" id="L41">        rating.setSandPRating(ratingDTO.getSandPRating());</span>
+<span class="fc" id="L42">        rating.setFitchRating(ratingDTO.getFitchRating());</span>
+<span class="fc" id="L43">        rating.setOrderNumber(ratingDTO.getOrderNumber());</span>
+
+<span class="fc" id="L45">        return rating;</span>
+    }
+
+    @Override
+    public void updateRatingListFromDTO(RatingDTO dto, Rating entity) {
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (dto == null) {</span>
+<span class="nc" id="L51">            return;</span>
+        }
+
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (dto.getId() != null) {</span>
+<span class="nc" id="L55">            entity.setId(dto.getId());</span>
+        }
+<span class="fc" id="L57">        entity.setMoodysRating(dto.getMoodysRating());</span>
+<span class="fc" id="L58">        entity.setSandPRating(dto.getSandPRating());</span>
+<span class="fc" id="L59">        entity.setFitchRating(dto.getFitchRating());</span>
+<span class="fc" id="L60">        entity.setOrderNumber(dto.getOrderNumber());</span>
+<span class="fc" id="L61">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

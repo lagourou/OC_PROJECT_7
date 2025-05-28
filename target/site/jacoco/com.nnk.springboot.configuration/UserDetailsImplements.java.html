@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserDetailsImplements.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.configuration</a> &gt; <span class="el_source">UserDetailsImplements.java</span></div><h1>UserDetailsImplements.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.configuration;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.nnk.springboot.model.User;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Implementation of UserDetails to adapt the User entity to Spring Security.
+ * Provides user authentication information and authorities.
+ */
+@Data
+@NoArgsConstructor
+<span class="fc" id="L22">@Slf4j</span>
+public class UserDetailsImplements implements UserDetails {
+
+    private Integer id;
+    private String username;
+    private String password;
+    private String fullname;
+    private String role;
+
+    /**
+     * Constructor that builds UserDetails from a User entity.
+     *
+     * @param user the User entity
+     */
+<span class="fc" id="L36">    public UserDetailsImplements(User user) {</span>
+<span class="fc" id="L37">        log.info(&quot;Creating UserDetails: id={}, username={}, role={}&quot;, user.getId(), user.getUsername(), user.getRole());</span>
+<span class="fc" id="L38">        this.id = user.getId();</span>
+<span class="fc" id="L39">        this.username = user.getUsername();</span>
+<span class="fc" id="L40">        this.password = user.getPassword();</span>
+<span class="fc" id="L41">        this.fullname = user.getFullname();</span>
+<span class="fc" id="L42">        this.role = user.getRole();</span>
+<span class="fc" id="L43">    }</span>
+
+    @Override
+    public String getPassword() {
+<span class="fc" id="L47">        return password;</span>
+    }
+
+    @Override
+    public String getUsername() {
+<span class="fc" id="L52">        return username;</span>
+    }
+
+    /**
+     * Returns the authorities granted to the user.
+     *
+     * @return a collection with a single authority based on the user role
+     */
+    @Override
+    public Collection&lt;? extends GrantedAuthority&gt; getAuthorities() {
+<span class="fc" id="L62">        log.info(&quot;Assigning authority '{}' to user ID: {}&quot;, role, id);</span>
+<span class="fc" id="L63">        return List.of(new SimpleGrantedAuthority(role));</span>
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+<span class="fc" id="L68">        return true; // Account is always non-expired</span>
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+<span class="fc" id="L73">        return true; // Credentials are always non-expired</span>
+    }
+
+    @Override
+    public boolean isEnabled() {
+<span class="fc" id="L78">        return true; // Account is always enabled</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

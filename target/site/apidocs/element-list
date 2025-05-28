@@ -1,0 +1,9 @@
+com.nnk.springboot
+com.nnk.springboot.configuration
+com.nnk.springboot.controller
+com.nnk.springboot.dto
+com.nnk.springboot.exception
+com.nnk.springboot.mapper
+com.nnk.springboot.model
+com.nnk.springboot.repositories
+com.nnk.springboot.service

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CurvePointMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.mapper</a> &gt; <span class="el_source">CurvePointMapperImpl.java</span></div><h1>CurvePointMapperImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.mapper;
+
+import com.nnk.springboot.dto.CurvePointDTO;
+import com.nnk.springboot.model.CurvePoint;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-05-29T00:36:36+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+)
+@Component
+<span class="fc" id="L14">public class CurvePointMapperImpl implements CurvePointMapper {</span>
+
+    @Override
+    public CurvePointDTO toCurvePointDTO(CurvePoint curvepoint) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( curvepoint == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
+        }
+
+<span class="fc" id="L22">        CurvePointDTO curvePointDTO = new CurvePointDTO();</span>
+
+<span class="fc" id="L24">        curvePointDTO.setId( curvepoint.getId() );</span>
+<span class="fc" id="L25">        curvePointDTO.setCurveId( curvepoint.getCurveId() );</span>
+<span class="fc" id="L26">        curvePointDTO.setTerm( curvepoint.getTerm() );</span>
+<span class="fc" id="L27">        curvePointDTO.setValue( curvepoint.getValue() );</span>
+
+<span class="fc" id="L29">        return curvePointDTO;</span>
+    }
+
+    @Override
+    public CurvePoint toCurvePoint(CurvePointDTO curvePointDTO) {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if ( curvePointDTO == null ) {</span>
+<span class="nc" id="L35">            return null;</span>
+        }
+
+<span class="fc" id="L38">        CurvePoint curvePoint = new CurvePoint();</span>
+
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( curvePointDTO.getId() != null ) {</span>
+<span class="fc" id="L41">            curvePoint.setId( curvePointDTO.getId() );</span>
+        }
+<span class="fc" id="L43">        curvePoint.setCurveId( curvePointDTO.getCurveId() );</span>
+<span class="fc" id="L44">        curvePoint.setTerm( curvePointDTO.getTerm() );</span>
+<span class="fc" id="L45">        curvePoint.setValue( curvePointDTO.getValue() );</span>
+
+<span class="fc" id="L47">        return curvePoint;</span>
+    }
+
+    @Override
+    public void updateCurvePointListFromDTO(CurvePointDTO dto, CurvePoint entity) {
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if ( dto == null ) {</span>
+<span class="nc" id="L53">            return;</span>
+        }
+
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if ( dto.getId() != null ) {</span>
+<span class="nc" id="L57">            entity.setId( dto.getId() );</span>
+        }
+<span class="fc" id="L59">        entity.setCurveId( dto.getCurveId() );</span>
+<span class="fc" id="L60">        entity.setTerm( dto.getTerm() );</span>
+<span class="fc" id="L61">        entity.setValue( dto.getValue() );</span>
+<span class="fc" id="L62">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

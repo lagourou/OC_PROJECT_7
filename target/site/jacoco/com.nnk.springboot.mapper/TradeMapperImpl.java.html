@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TradeMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.mapper</a> &gt; <span class="el_source">TradeMapperImpl.java</span></div><h1>TradeMapperImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.mapper;
+
+import com.nnk.springboot.dto.TradeDTO;
+import com.nnk.springboot.model.Trade;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-05-29T00:36:36+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+)
+@Component
+<span class="fc" id="L14">public class TradeMapperImpl implements TradeMapper {</span>
+
+    @Override
+    public TradeDTO toTradeDTO(Trade trade) {
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( trade == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
+        }
+
+<span class="fc" id="L22">        TradeDTO tradeDTO = new TradeDTO();</span>
+
+<span class="fc" id="L24">        tradeDTO.setTradeId( trade.getTradeId() );</span>
+<span class="fc" id="L25">        tradeDTO.setAccount( trade.getAccount() );</span>
+<span class="fc" id="L26">        tradeDTO.setType( trade.getType() );</span>
+<span class="fc" id="L27">        tradeDTO.setBuyQuantity( trade.getBuyQuantity() );</span>
+
+<span class="fc" id="L29">        return tradeDTO;</span>
+    }
+
+    @Override
+    public Trade toTrade(TradeDTO tradeDTO) {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if ( tradeDTO == null ) {</span>
+<span class="nc" id="L35">            return null;</span>
+        }
+
+<span class="fc" id="L38">        Trade trade = new Trade();</span>
+
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( tradeDTO.getTradeId() != null ) {</span>
+<span class="fc" id="L41">            trade.setTradeId( tradeDTO.getTradeId() );</span>
+        }
+<span class="fc" id="L43">        trade.setAccount( tradeDTO.getAccount() );</span>
+<span class="fc" id="L44">        trade.setType( tradeDTO.getType() );</span>
+<span class="fc" id="L45">        trade.setBuyQuantity( tradeDTO.getBuyQuantity() );</span>
+
+<span class="fc" id="L47">        return trade;</span>
+    }
+
+    @Override
+    public void updateTradeListFromDTO(TradeDTO dto, Trade entity) {
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if ( dto == null ) {</span>
+<span class="nc" id="L53">            return;</span>
+        }
+
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if ( dto.getTradeId() != null ) {</span>
+<span class="nc" id="L57">            entity.setTradeId( dto.getTradeId() );</span>
+        }
+<span class="fc" id="L59">        entity.setAccount( dto.getAccount() );</span>
+<span class="fc" id="L60">        entity.setType( dto.getType() );</span>
+<span class="fc" id="L61">        entity.setBuyQuantity( dto.getBuyQuantity() );</span>
+<span class="fc" id="L62">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

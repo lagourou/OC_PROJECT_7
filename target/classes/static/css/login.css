@@ -1,0 +1,76 @@
+.login-body {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container-login {
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.login-form-group {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.login-label {
+  width: 80px;
+  text-align: left;
+}
+
+.login-form-control {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-btn-primary {
+  width: auto;
+  padding: 8px 20px;
+  background-color: #c7c3c3;
+  border: black 1px solid;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+}
+
+.login-btn-primary:hover {
+  background-color: #6c757d;
+}
+
+.login-btn-secondary {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-btn-secondary:hover {
+  text-decoration: underline;
+}
+.login-links {
+  display: flex;
+  align-items: center; /* Assure un bon alignement vertical */
+  gap: 10px; /* Réduit l'espace entre les éléments */
+  justify-content: flex-start; /* Garde les éléments bien alignés à gauche */
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+}
