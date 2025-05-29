@@ -4,18 +4,18 @@ Poseidon Capital Solutions is an application that centralizes several financial 
 
 ## Technical
 
-• **Spring Boot 3.4.6** - Application Framework
-• **Spring Data JPA** - Data Backup
-• **Spring Security** - Authentication and Authorization
-• **Maven** - Dependency Management
-• **Java 17** - Programming Language
-•**Thymeleaf** - Dynamic Web Page Generation
-•**Bootstrap v.4.3.1** - CSS Framework for Design
-• **MySQL** - Database
-• **JaCoCo** - Java Code Coverage
-• **JUnit** - Code Testing Tool
-• **MapStruct** - Easily Converts Java Objects
-• **Javadoc** - Automatic Documentation Generation for Java Code
+- **Spring Boot 3.4.6** - Application Framework
+- **Spring Data JPA** - Data Backup
+- **Spring Security** - Authentication and Authorization
+- **Maven** - Dependency Management
+- **Java 17** - Programming Language
+- **Thymeleaf** - Dynamic Web Page Generation
+- **Bootstrap v.4.3.1** - CSS Framework for Design
+- **MySQL** - Database
+- **JaCoCo** - Java Code Coverage
+- **JUnit** - Code Testing Tool
+- **MapStruct** - Easily Converts Java Objects
+- **Javadoc** - Automatic Documentation Generation for Java Code
 
 ## Features
 
