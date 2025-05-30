@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2025-05-29T00:36:36+0200&quot;,
-    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+    date = &quot;2025-05-30T15:50:23+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.v20250526-2018, environment: Java 21.0.7 (Eclipse Adoptium)&quot;
 )
 @Component
 <span class="fc" id="L14">public class CurvePointMapperImpl implements CurvePointMapper {</span>
@@ -21,8 +21,8 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L22">        CurvePointDTO curvePointDTO = new CurvePointDTO();</span>
 
-<span class="fc" id="L24">        curvePointDTO.setId( curvepoint.getId() );</span>
-<span class="fc" id="L25">        curvePointDTO.setCurveId( curvepoint.getCurveId() );</span>
+<span class="fc" id="L24">        curvePointDTO.setCurveId( curvepoint.getCurveId() );</span>
+<span class="fc" id="L25">        curvePointDTO.setId( curvepoint.getId() );</span>
 <span class="fc" id="L26">        curvePointDTO.setTerm( curvepoint.getTerm() );</span>
 <span class="fc" id="L27">        curvePointDTO.setValue( curvepoint.getValue() );</span>
 
@@ -37,10 +37,10 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L38">        CurvePoint curvePoint = new CurvePoint();</span>
 
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( curvePointDTO.getId() != null ) {</span>
-<span class="fc" id="L41">            curvePoint.setId( curvePointDTO.getId() );</span>
+<span class="fc" id="L40">        curvePoint.setCurveId( curvePointDTO.getCurveId() );</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if ( curvePointDTO.getId() != null ) {</span>
+<span class="fc" id="L42">            curvePoint.setId( curvePointDTO.getId() );</span>
         }
-<span class="fc" id="L43">        curvePoint.setCurveId( curvePointDTO.getCurveId() );</span>
 <span class="fc" id="L44">        curvePoint.setTerm( curvePointDTO.getTerm() );</span>
 <span class="fc" id="L45">        curvePoint.setValue( curvePointDTO.getValue() );</span>
 
@@ -53,10 +53,10 @@ import org.springframework.stereotype.Component;
 <span class="nc" id="L53">            return;</span>
         }
 
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if ( dto.getId() != null ) {</span>
-<span class="nc" id="L57">            entity.setId( dto.getId() );</span>
+<span class="fc" id="L56">        entity.setCurveId( dto.getCurveId() );</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">        if ( dto.getId() != null ) {</span>
+<span class="nc" id="L58">            entity.setId( dto.getId() );</span>
         }
-<span class="fc" id="L59">        entity.setCurveId( dto.getCurveId() );</span>
 <span class="fc" id="L60">        entity.setTerm( dto.getTerm() );</span>
 <span class="fc" id="L61">        entity.setValue( dto.getValue() );</span>
 <span class="fc" id="L62">    }</span>

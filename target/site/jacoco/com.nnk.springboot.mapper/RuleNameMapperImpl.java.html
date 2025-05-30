@@ -5,65 +5,69 @@ import com.nnk.springboot.model.RuleName;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
-@Generated(value = &quot;org.mapstruct.ap.MappingProcessor&quot;, date = &quot;2025-05-29T00:36:37+0200&quot;, comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;)
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2025-05-30T15:50:24+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.v20250526-2018, environment: Java 21.0.7 (Eclipse Adoptium)&quot;
+)
 @Component
-<span class="fc" id="L10">public class RuleNameMapperImpl implements RuleNameMapper {</span>
+<span class="fc" id="L14">public class RuleNameMapperImpl implements RuleNameMapper {</span>
 
     @Override
     public RuleNameDTO toRuleNameDTO(RuleName ruleName) {
-<span class="pc bpc" id="L14" title="1 of 2 branches missed.">        if (ruleName == null) {</span>
-<span class="nc" id="L15">            return null;</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if ( ruleName == null ) {</span>
+<span class="nc" id="L19">            return null;</span>
         }
 
-<span class="fc" id="L18">        RuleNameDTO ruleNameDTO = new RuleNameDTO();</span>
+<span class="fc" id="L22">        RuleNameDTO ruleNameDTO = new RuleNameDTO();</span>
 
-<span class="fc" id="L20">        ruleNameDTO.setId(ruleName.getId());</span>
-<span class="fc" id="L21">        ruleNameDTO.setName(ruleName.getName());</span>
-<span class="fc" id="L22">        ruleNameDTO.setDescription(ruleName.getDescription());</span>
-<span class="fc" id="L23">        ruleNameDTO.setJson(ruleName.getJson());</span>
-<span class="fc" id="L24">        ruleNameDTO.setTemplate(ruleName.getTemplate());</span>
-<span class="fc" id="L25">        ruleNameDTO.setSqlStr(ruleName.getSqlStr());</span>
-<span class="fc" id="L26">        ruleNameDTO.setSqlPart(ruleName.getSqlPart());</span>
+<span class="fc" id="L24">        ruleNameDTO.setDescription( ruleName.getDescription() );</span>
+<span class="fc" id="L25">        ruleNameDTO.setId( ruleName.getId() );</span>
+<span class="fc" id="L26">        ruleNameDTO.setJson( ruleName.getJson() );</span>
+<span class="fc" id="L27">        ruleNameDTO.setName( ruleName.getName() );</span>
+<span class="fc" id="L28">        ruleNameDTO.setSqlPart( ruleName.getSqlPart() );</span>
+<span class="fc" id="L29">        ruleNameDTO.setSqlStr( ruleName.getSqlStr() );</span>
+<span class="fc" id="L30">        ruleNameDTO.setTemplate( ruleName.getTemplate() );</span>
 
-<span class="fc" id="L28">        return ruleNameDTO;</span>
+<span class="fc" id="L32">        return ruleNameDTO;</span>
     }
 
     @Override
     public RuleName toRuleName(RuleNameDTO ruleNameDTO) {
-<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if (ruleNameDTO == null) {</span>
-<span class="nc" id="L34">            return null;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if ( ruleNameDTO == null ) {</span>
+<span class="nc" id="L38">            return null;</span>
         }
 
-<span class="fc" id="L37">        RuleName ruleName = new RuleName();</span>
+<span class="fc" id="L41">        RuleName ruleName = new RuleName();</span>
 
-<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if (ruleNameDTO.getId() != null) {</span>
-<span class="fc" id="L40">            ruleName.setId(ruleNameDTO.getId());</span>
+<span class="fc" id="L43">        ruleName.setDescription( ruleNameDTO.getDescription() );</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if ( ruleNameDTO.getId() != null ) {</span>
+<span class="fc" id="L45">            ruleName.setId( ruleNameDTO.getId() );</span>
         }
-<span class="fc" id="L42">        ruleName.setName(ruleNameDTO.getName());</span>
-<span class="fc" id="L43">        ruleName.setDescription(ruleNameDTO.getDescription());</span>
-<span class="fc" id="L44">        ruleName.setJson(ruleNameDTO.getJson());</span>
-<span class="fc" id="L45">        ruleName.setTemplate(ruleNameDTO.getTemplate());</span>
-<span class="fc" id="L46">        ruleName.setSqlStr(ruleNameDTO.getSqlStr());</span>
-<span class="fc" id="L47">        ruleName.setSqlPart(ruleNameDTO.getSqlPart());</span>
+<span class="fc" id="L47">        ruleName.setJson( ruleNameDTO.getJson() );</span>
+<span class="fc" id="L48">        ruleName.setName( ruleNameDTO.getName() );</span>
+<span class="fc" id="L49">        ruleName.setSqlPart( ruleNameDTO.getSqlPart() );</span>
+<span class="fc" id="L50">        ruleName.setSqlStr( ruleNameDTO.getSqlStr() );</span>
+<span class="fc" id="L51">        ruleName.setTemplate( ruleNameDTO.getTemplate() );</span>
 
-<span class="fc" id="L49">        return ruleName;</span>
+<span class="fc" id="L53">        return ruleName;</span>
     }
 
     @Override
     public void updateRuleNameListFormDTO(RuleNameDTO dto, RuleName entity) {
-<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (dto == null) {</span>
-<span class="nc" id="L55">            return;</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if ( dto == null ) {</span>
+<span class="nc" id="L59">            return;</span>
         }
 
-<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (dto.getId() != null) {</span>
-<span class="nc" id="L59">            entity.setId(dto.getId());</span>
+<span class="fc" id="L62">        entity.setDescription( dto.getDescription() );</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">        if ( dto.getId() != null ) {</span>
+<span class="nc" id="L64">            entity.setId( dto.getId() );</span>
         }
-<span class="fc" id="L61">        entity.setName(dto.getName());</span>
-<span class="fc" id="L62">        entity.setDescription(dto.getDescription());</span>
-<span class="fc" id="L63">        entity.setJson(dto.getJson());</span>
-<span class="fc" id="L64">        entity.setTemplate(dto.getTemplate());</span>
-<span class="fc" id="L65">        entity.setSqlStr(dto.getSqlStr());</span>
-<span class="fc" id="L66">        entity.setSqlPart(dto.getSqlPart());</span>
-<span class="fc" id="L67">    }</span>
+<span class="fc" id="L66">        entity.setJson( dto.getJson() );</span>
+<span class="fc" id="L67">        entity.setName( dto.getName() );</span>
+<span class="fc" id="L68">        entity.setSqlPart( dto.getSqlPart() );</span>
+<span class="fc" id="L69">        entity.setSqlStr( dto.getSqlStr() );</span>
+<span class="fc" id="L70">        entity.setTemplate( dto.getTemplate() );</span>
+<span class="fc" id="L71">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

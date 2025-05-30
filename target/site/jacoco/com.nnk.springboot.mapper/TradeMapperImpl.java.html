@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2025-05-29T00:36:36+0200&quot;,
-    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+    date = &quot;2025-05-30T15:50:24+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.v20250526-2018, environment: Java 21.0.7 (Eclipse Adoptium)&quot;
 )
 @Component
 <span class="fc" id="L14">public class TradeMapperImpl implements TradeMapper {</span>
@@ -21,10 +21,10 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L22">        TradeDTO tradeDTO = new TradeDTO();</span>
 
-<span class="fc" id="L24">        tradeDTO.setTradeId( trade.getTradeId() );</span>
-<span class="fc" id="L25">        tradeDTO.setAccount( trade.getAccount() );</span>
-<span class="fc" id="L26">        tradeDTO.setType( trade.getType() );</span>
-<span class="fc" id="L27">        tradeDTO.setBuyQuantity( trade.getBuyQuantity() );</span>
+<span class="fc" id="L24">        tradeDTO.setAccount( trade.getAccount() );</span>
+<span class="fc" id="L25">        tradeDTO.setBuyQuantity( trade.getBuyQuantity() );</span>
+<span class="fc" id="L26">        tradeDTO.setTradeId( trade.getTradeId() );</span>
+<span class="fc" id="L27">        tradeDTO.setType( trade.getType() );</span>
 
 <span class="fc" id="L29">        return tradeDTO;</span>
     }
@@ -37,12 +37,12 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L38">        Trade trade = new Trade();</span>
 
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( tradeDTO.getTradeId() != null ) {</span>
-<span class="fc" id="L41">            trade.setTradeId( tradeDTO.getTradeId() );</span>
+<span class="fc" id="L40">        trade.setAccount( tradeDTO.getAccount() );</span>
+<span class="fc" id="L41">        trade.setBuyQuantity( tradeDTO.getBuyQuantity() );</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if ( tradeDTO.getTradeId() != null ) {</span>
+<span class="fc" id="L43">            trade.setTradeId( tradeDTO.getTradeId() );</span>
         }
-<span class="fc" id="L43">        trade.setAccount( tradeDTO.getAccount() );</span>
-<span class="fc" id="L44">        trade.setType( tradeDTO.getType() );</span>
-<span class="fc" id="L45">        trade.setBuyQuantity( tradeDTO.getBuyQuantity() );</span>
+<span class="fc" id="L45">        trade.setType( tradeDTO.getType() );</span>
 
 <span class="fc" id="L47">        return trade;</span>
     }
@@ -53,12 +53,12 @@ import org.springframework.stereotype.Component;
 <span class="nc" id="L53">            return;</span>
         }
 
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if ( dto.getTradeId() != null ) {</span>
-<span class="nc" id="L57">            entity.setTradeId( dto.getTradeId() );</span>
+<span class="fc" id="L56">        entity.setAccount( dto.getAccount() );</span>
+<span class="fc" id="L57">        entity.setBuyQuantity( dto.getBuyQuantity() );</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if ( dto.getTradeId() != null ) {</span>
+<span class="nc" id="L59">            entity.setTradeId( dto.getTradeId() );</span>
         }
-<span class="fc" id="L59">        entity.setAccount( dto.getAccount() );</span>
-<span class="fc" id="L60">        entity.setType( dto.getType() );</span>
-<span class="fc" id="L61">        entity.setBuyQuantity( dto.getBuyQuantity() );</span>
+<span class="fc" id="L61">        entity.setType( dto.getType() );</span>
 <span class="fc" id="L62">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

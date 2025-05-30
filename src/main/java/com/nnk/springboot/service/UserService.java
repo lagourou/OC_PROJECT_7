@@ -63,6 +63,10 @@ public class UserService {
      * @param user user to save
      * @return saved User
      */
+    private boolean isEncoded(String password) {
+        return password != null && password.startsWith("$2a$");
+    }
+
     public User save(User user) {
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("USER");
@@ -74,10 +78,14 @@ public class UserService {
             if (user.getPassword() == null || user.getPassword().isEmpty()) {
                 user.setPassword(existingUser.getPassword());
             } else if (!passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
-                user.setPassword(passwordEncoder.encode(user.getPassword()));
+                if (!isEncoded(user.getPassword())) {
+                    user.setPassword(passwordEncoder.encode(user.getPassword()));
+                }
             }
         } else {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            if (!isEncoded(user.getPassword())) {
+                user.setPassword(passwordEncoder.encode(user.getPassword()));
+            }
         }
 
         return userRepository.save(user);
@@ -129,7 +137,6 @@ public class UserService {
      */
     public void add(UserDTO userDTO) {
         User user = userMapper.toUser(userDTO);
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
         save(user);
     }
 

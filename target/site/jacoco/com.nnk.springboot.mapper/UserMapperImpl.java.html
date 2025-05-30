@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2025-05-29T00:36:36+0200&quot;,
-    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+    date = &quot;2025-05-30T15:50:24+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.v20250526-2018, environment: Java 21.0.7 (Eclipse Adoptium)&quot;
 )
 @Component
 <span class="fc" id="L14">public class UserMapperImpl implements UserMapper {</span>
@@ -21,11 +21,11 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L22">        UserDTO userDTO = new UserDTO();</span>
 
-<span class="fc" id="L24">        userDTO.setId( user.getId() );</span>
-<span class="fc" id="L25">        userDTO.setUsername( user.getUsername() );</span>
-<span class="fc" id="L26">        userDTO.setFullname( user.getFullname() );</span>
-<span class="fc" id="L27">        userDTO.setPassword( user.getPassword() );</span>
-<span class="fc" id="L28">        userDTO.setRole( user.getRole() );</span>
+<span class="fc" id="L24">        userDTO.setFullname( user.getFullname() );</span>
+<span class="fc" id="L25">        userDTO.setId( user.getId() );</span>
+<span class="fc" id="L26">        userDTO.setPassword( user.getPassword() );</span>
+<span class="fc" id="L27">        userDTO.setRole( user.getRole() );</span>
+<span class="fc" id="L28">        userDTO.setUsername( user.getUsername() );</span>
 
 <span class="fc" id="L30">        return userDTO;</span>
     }
@@ -36,10 +36,10 @@ import org.springframework.stereotype.Component;
 <span class="nc" id="L36">            return;</span>
         }
 
-<span class="fc" id="L39">        entity.setId( dto.getId() );</span>
-<span class="fc" id="L40">        entity.setUsername( dto.getUsername() );</span>
-<span class="fc" id="L41">        entity.setFullname( dto.getFullname() );</span>
-<span class="fc" id="L42">        entity.setRole( dto.getRole() );</span>
+<span class="fc" id="L39">        entity.setFullname( dto.getFullname() );</span>
+<span class="fc" id="L40">        entity.setId( dto.getId() );</span>
+<span class="fc" id="L41">        entity.setRole( dto.getRole() );</span>
+<span class="fc" id="L42">        entity.setUsername( dto.getUsername() );</span>
 <span class="fc" id="L43">    }</span>
 
     @Override
@@ -50,11 +50,11 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L51">        User user = new User();</span>
 
-<span class="fc" id="L53">        user.setId( userDTO.getId() );</span>
-<span class="fc" id="L54">        user.setUsername( userDTO.getUsername() );</span>
+<span class="fc" id="L53">        user.setFullname( userDTO.getFullname() );</span>
+<span class="fc" id="L54">        user.setId( userDTO.getId() );</span>
 <span class="fc" id="L55">        user.setPassword( userDTO.getPassword() );</span>
-<span class="fc" id="L56">        user.setFullname( userDTO.getFullname() );</span>
-<span class="fc" id="L57">        user.setRole( userDTO.getRole() );</span>
+<span class="fc" id="L56">        user.setRole( userDTO.getRole() );</span>
+<span class="fc" id="L57">        user.setUsername( userDTO.getUsername() );</span>
 
 <span class="fc" id="L59">        return user;</span>
     }

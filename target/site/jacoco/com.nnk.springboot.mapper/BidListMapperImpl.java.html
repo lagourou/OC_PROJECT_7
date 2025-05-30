@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2025-05-29T00:36:35+0200&quot;,
-    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)&quot;
+    date = &quot;2025-05-30T15:50:24+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.v20250526-2018, environment: Java 21.0.7 (Eclipse Adoptium)&quot;
 )
 @Component
 <span class="fc" id="L14">public class BidListMapperImpl implements BidListMapper {</span>
@@ -21,10 +21,10 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L22">        BidListDTO bidListDTO = new BidListDTO();</span>
 
-<span class="fc" id="L24">        bidListDTO.setBidListId( bidList.getBidListId() );</span>
-<span class="fc" id="L25">        bidListDTO.setAccount( bidList.getAccount() );</span>
-<span class="fc" id="L26">        bidListDTO.setType( bidList.getType() );</span>
-<span class="fc" id="L27">        bidListDTO.setBidQuantity( bidList.getBidQuantity() );</span>
+<span class="fc" id="L24">        bidListDTO.setAccount( bidList.getAccount() );</span>
+<span class="fc" id="L25">        bidListDTO.setBidListId( bidList.getBidListId() );</span>
+<span class="fc" id="L26">        bidListDTO.setBidQuantity( bidList.getBidQuantity() );</span>
+<span class="fc" id="L27">        bidListDTO.setType( bidList.getType() );</span>
 
 <span class="fc" id="L29">        return bidListDTO;</span>
     }
@@ -37,12 +37,12 @@ import org.springframework.stereotype.Component;
 
 <span class="fc" id="L38">        BidList bidList = new BidList();</span>
 
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if ( bidListDTO.getBidListId() != null ) {</span>
-<span class="fc" id="L41">            bidList.setBidListId( bidListDTO.getBidListId() );</span>
+<span class="fc" id="L40">        bidList.setAccount( bidListDTO.getAccount() );</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if ( bidListDTO.getBidListId() != null ) {</span>
+<span class="fc" id="L42">            bidList.setBidListId( bidListDTO.getBidListId() );</span>
         }
-<span class="fc" id="L43">        bidList.setAccount( bidListDTO.getAccount() );</span>
-<span class="fc" id="L44">        bidList.setType( bidListDTO.getType() );</span>
-<span class="fc" id="L45">        bidList.setBidQuantity( bidListDTO.getBidQuantity() );</span>
+<span class="fc" id="L44">        bidList.setBidQuantity( bidListDTO.getBidQuantity() );</span>
+<span class="fc" id="L45">        bidList.setType( bidListDTO.getType() );</span>
 
 <span class="fc" id="L47">        return bidList;</span>
     }
@@ -53,12 +53,12 @@ import org.springframework.stereotype.Component;
 <span class="nc" id="L53">            return;</span>
         }
 
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if ( dto.getBidListId() != null ) {</span>
-<span class="nc" id="L57">            entity.setBidListId( dto.getBidListId() );</span>
+<span class="fc" id="L56">        entity.setAccount( dto.getAccount() );</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">        if ( dto.getBidListId() != null ) {</span>
+<span class="nc" id="L58">            entity.setBidListId( dto.getBidListId() );</span>
         }
-<span class="fc" id="L59">        entity.setAccount( dto.getAccount() );</span>
-<span class="fc" id="L60">        entity.setType( dto.getType() );</span>
-<span class="fc" id="L61">        entity.setBidQuantity( dto.getBidQuantity() );</span>
+<span class="fc" id="L60">        entity.setBidQuantity( dto.getBidQuantity() );</span>
+<span class="fc" id="L61">        entity.setType( dto.getType() );</span>
 <span class="fc" id="L62">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
